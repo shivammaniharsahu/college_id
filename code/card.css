@@ -1,0 +1,94 @@
+.right{
+	float: right;
+	padding: 0;
+}
+.left {
+	float: left;
+	padding: 0;
+}
+
+.middle{
+	padding: 0;
+}
+
+.user-img{
+
+}
+
+.user-details p,.card-footer p{
+	margin-bottom: 0;
+}
+.card-header .middle{
+align-self: center;
+}
+.card-header .middle p{
+	margin-bottom: 0;
+	white-space: nowrap;
+}
+
+.card-header{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.card .row{
+	margin: 0;
+}
+.card-header, .card-footer{
+	/*border: none;*/
+
+}
+
+.header-border{	
+width: 50%;
+border-top:5px solid #498aab;	
+position:absolute;
+left: 25%;
+bottom: -15px;
+
+}
+
+.gold{
+background: rgb(254,249,168);
+background: linear-gradient(112deg, rgba(254,249,168,1) 0%, rgba(247,198,121,1) 68%, rgba(247,198,121,1) 83%, rgba(254,249,168,1) 100%);
+}
+
+.silver{
+
+
+background: #d7dbdd;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #d7dbdd, #d7dbdd);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #d7dbdd, #d7dbdd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.lifetime{
+	background: #2193b0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.signature{
+	position: absolute;
+    top: -15px;
+    left: -20;
+
+}
+
+
+.card-body{
+	background-image: url('bg5.png');
+    background-repeat: no-repeat;    
+	background-position: center;
+    background-size: 100% 100%;
+}
+.user-details{
+
+	/* background-image: url('bg4.jpeg');
+	
+    background-repeat: no-repeat;    
+	/* background-position: center; */
+    /* background-size: 100% 100%;  */
+
+}
