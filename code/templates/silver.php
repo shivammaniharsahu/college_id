@@ -8,41 +8,43 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="card.css">
+  <link rel="stylesheet" href="../assets/css/card.css">
 </head>
 <body>
  
-<div class="container row">
+<div class="row">
 
 
     <?php
 
-include "../server/dbconn.php"; // Using database connection file here
+            include "../server/dbconn.php"; // Using database connection file here
 
-$records = mysqli_query($db,"select * from users"); // fetch data from database
+              $records = mysqli_query($db,"select * from users"); // fetch data from database
 
-while($data = mysqli_fetch_array($records))
-{
-?>  
+        while($data = mysqli_fetch_array($records))
+        {
+        ?>  
 
 
-
-  <div class="card mb-2 mr-2 silver">
+<div class="col-md-6">
+  <div class="card mb-4 silver">
     <div class="card-header row ">
       <div class="left text-left ">
-        <img src="../assets/image/gec_logo.png" height="66px">
+        <img src="../assets/image/gec_logo.png" height="80px">
       </div>
       <div class="middle text-center ml-1 mr-1  font-weight-bolder">
-        <p>ALUMNI ASSOCIATION OF GECNIT RAIPUR</p>
-        <p  style="font-size:9px;">NATIONAL INSTITUTE OF TECHNOLOGY RAIPUR<br>
-                 +91 0771 2990317, secretary@gecnitrralumni.org
+        <p style="font-size:16px;" >ALUMNI ASSOCIATION OF GECNIT RAIPUR</p>
+        <p  style="font-size:14px;">NATIONAL INSTITUTE OF TECHNOLOGY RAIPUR<br>
+        </p>
+        <p  style="font-size:12px;">        
+               +91 0771 2990317, secretary@gecnitrralumni.org
                 <br>
                 www.gecnitrralumni.org
-         </p>
-          
+        </p>
+       
       </div>
       <div class="right text-right "  >
-        <img src="../assets/image/nitrr_logo.png" height="70px" >
+        <img src="../assets/image/nitrr_logo.png" height="80px" >
       </div>
     </div>
     <div class="card-body row">
@@ -61,14 +63,16 @@ while($data = mysqli_fetch_array($records))
     </div> 
     <div class="card-footer row">
       <div class="col-md-6">
-        <p class="font-weight-bold">Silver Jubilee - <span class="passoutyear"><?php echo date("Y"); ?></span></p>
+        <p class="font-weight-bold" style="font-size:22px">Silver Jubilee - <span class="passoutyear"><?php echo date("Y"); ?></span></p>
       </div>
       <div class="col-md-6">
-        <p class="font-weight-bold ">Secretary <span class="signature"> <img src="../assets/image/sign.png" height="50px"> </span></p>
+        <p class="font-weight-bold " style="text-align:center; font-size:22px;" >Secretary <span class="signature"> <img src="../assets/image/sign.png" height="50px"> </span></p>
       </div>
       
+    </div>
   </div>
 </div>
+
 <?php
 }
 ?>

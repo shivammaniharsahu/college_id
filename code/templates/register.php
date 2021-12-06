@@ -29,9 +29,9 @@
           <option>Select</option>
             <option value="Computer Science and Engineering">Computer Science and Engineering</option>
             <option value="Information Technology">Information Technology</option>
-            <option value="Electronics and Telecommunication">Electronics and Telecommunication</option>
+            <option value="Elex & Tele. Engg.">Electronics and Telecommunication</option>
             <option value="Electrical Engineering">Electrical Engineering</option>
-            <option value="Metallurgical and Materials Engineering">Metallurgical and Materials Engineering</option>
+            <option value="Metallurgical Engineering">Metallurgical and Materials Engineering</option>
             <option value="Mechanical Engineering">Mechanical Engineering</option>
             <option value="Mining Engineering">Mining Engineering</option>
             <option value="Bio Medical Engineering">Bio Medical Engineering</option>

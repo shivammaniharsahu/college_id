@@ -34,16 +34,16 @@
 
 
 <div class="col-md-6">
-  <div class="card mb-2  lifetime"   >
+  <div class="card mb-4  lifetime"   >
     <div class="card-header row ">
       <div class="left text-left ">
-        <img src="../assets/image/gec_logo.png" height="66px" >
+        <img src="../assets/image/gec_logo.png" height="80px" >
       </div>
       <div class="middle text-center ml-1 mr-1  font-weight-bolder">
         <p style="font-size:17px;">ALUMNI ASSOCIATION OF GECNIT RAIPUR</p>
         <p  style="font-size:14px;">NATIONAL INSTITUTE OF TECHNOLOGY RAIPUR<br>
         </p>
-        <p  style="font-size:10px;">        
+        <p  style="font-size:12px;">        
                +91 0771 2990317, secretary@gecnitrralumni.org
                 <br>
                 www.gecnitrralumni.org
@@ -52,10 +52,10 @@
         <!-- <div class="header-border"></div> -->
       </div>
       <div class="right text-right "  >
-        <img src="../assets/image/nitrr_logo.png" height="70px" >
+        <img src="../assets/image/nitrr_logo.png" height="80px" >
       </div>
     </div>
-    <div class="card-body row" >
+    <div class="card-body row" style="" >
       <div class="user-img" >
       
       

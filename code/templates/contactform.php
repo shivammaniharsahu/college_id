@@ -21,7 +21,7 @@ if((isset($_POST['submit'])))
       {
         $bid="102"; 
       }
-      else if($Branch=='Electronics and Telecommunication')
+      else if($Branch=='Elex & Tele. Engg.')
       {
         $bid="103"; 
       }
@@ -29,7 +29,7 @@ if((isset($_POST['submit'])))
       {
         $bid="104"; 
       }
-      else if($Branch=='Mechnical Engineering')
+      else if($Branch=='Mechanical Engineering')
       {
         $bid="105"; 
       }
@@ -42,7 +42,7 @@ if((isset($_POST['submit'])))
       {
         $bid="107"; 
       }
-      else if($Branch=='Metallurgical and Materials Engineering')
+      else if($Branch=='Metallurgical Engineering')
       {
         $bid="108"; 
       }

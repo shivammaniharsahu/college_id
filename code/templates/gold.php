@@ -8,37 +8,39 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="card.css">
+  <link rel="stylesheet" href="../assets/css/card.css">
 </head>
 <body id="tab">
  
-<div class="container row" >
-
-
-    <?php
+<div class="row" >
+    
+<?php
 
 include "../server/dbconn.php"; // Using database connection file here
 
 $records = mysqli_query($db,"select * from users"); // fetch data from database
 
-while($data = mysqli_fetch_array($records))
+ while($data = mysqli_fetch_array($records))
 {
-?>  
+  ?>  
 
 
 
-  <div class="card mb-4 mr-5 gold" >
+  <div class="card mb-4 gold" >
     <div class="card-header row ">
       <div class="left text-left ">
         <img src="../assets/image/gec_logo.png" height="70px">
       </div>
       <div class="middle text-center ml-1 mr-1  font-weight-bolder">
         <p>ALUMNI ASSOCIATION OF GECNIT RAIPUR</p>
-        <p  style="font-size:9px;">NATIONAL INSTITUTE OF TECHNOLOGY RAIPUR<br>
-                 +91 0771 2990317, secretary@gecnitrralumni.org
+        <p  style="font-size:14px;">NATIONAL INSTITUTE OF TECHNOLOGY RAIPUR<br>
+        </p>
+        <p  style="font-size:11px;">        
+               +91 0771 2990317, secretary@gecnitrralumni.org
                 <br>
                 www.gecnitrralumni.org
-         </p>
+        </p>
+       
                         
         <!-- <div class="header-border"></div> -->
       </div>
@@ -49,7 +51,7 @@ while($data = mysqli_fetch_array($records))
     <div class="card-body row">
       
       <div class="user-img" >
-      <img src="../assets/avatar/<?php echo $data['avatar']; ?> " class="img-responsive" height="100px" width="100px" alt=""> 
+      <img src="../assets/avatar/<?php echo $data['avatar']; ?> " class="img-responsive" height="140px" width="140px" alt=""> 
       
       </div>
       <div class="user-details ml-3">

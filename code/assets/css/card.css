@@ -1,10 +1,16 @@
 .right{
 	float: right;
 	padding: 0;
+	margin-left: 10px;
+	margin-right: 0px;
 }
 .left {
 	float: left;
 	padding: 0;
+	
+	margin-right: 10px;
+	
+	margin-left: 10px;
 }
 
 .middle{
@@ -19,16 +25,21 @@
 	margin-bottom: 0;
 }
 .card-header .middle{
-align-self: center;
+	padding: auto;
+
 }
 .card-header .middle p{
 	margin-bottom: 0;
 	white-space: nowrap;
 }
-
+.card-footer{
+	height: 70px;
+	font-size: 20px;
+}
 .card-header{
 	padding-left: 5px;
 	padding-right: 5px;
+    height: 105px;
 }
 
 .card .row{
@@ -55,7 +66,7 @@ background: linear-gradient(112deg, rgba(254,249,168,1) 0%, rgba(247,198,121,1) 
 
 .silver{
 
-
+border:1.75px solid black;
 background: #d7dbdd;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to top, #d7dbdd, #d7dbdd);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to top, #d7dbdd, #d7dbdd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -70,9 +81,11 @@ background: linear-gradient(to left, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Fi
 }
 
 .signature{
+
 	position: absolute;
-    top: -15px;
-    left: -20;
+    top: -3px;
+
+    left: 175px;
 
 }
 
@@ -82,7 +95,16 @@ background: linear-gradient(to left, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Fi
     background-repeat: no-repeat;    
 	background-position: center;
     background-size: 100% 100%;
+    align-content: center;
 }
+.gold .card-body,.silver .card-body{
+	height: 200px;
+}
+
+.gold .card-body .user-details,.silver .card-body .user-details{
+	font-size: 18px;
+}
+
 .user-details{
 
 	/* background-image: url('bg4.jpeg');
