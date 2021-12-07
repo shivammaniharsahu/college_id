@@ -19,24 +19,44 @@
 
             include "../server/dbconn.php"; // Using database connection file here
 
-              $records = mysqli_query($db,"select * from users"); // fetch data from database
-
+       $records = mysqli_query($db,"select * from users"); // fetch data from database
+         $id=1;
         while($data = mysqli_fetch_array($records))
         {
         ?>  
+          <?php 
+             if($id%2==0)
+              {
+
+                echo '<div class="col-md-6" style="margin-left:-15px">';
 
 
-<div class="col-md-6">
-  <div class="card mb-4 silver">
+                $id=$id+1;
+
+              }
+
+          
+
+          
+              else
+              {
+                echo '<div class="col-md-6" >';
+                
+          $id=$id+1;
+              }
+              
+          ?>
+
+  <div class="card mb-4 silver ml-1">
     <div class="card-header row ">
       <div class="left text-left ">
-        <img src="../assets/image/gec_logo.png" height="80px">
+        <img src="../assets/image/gec_logo.png" height="75px">
       </div>
       <div class="middle text-center ml-1 mr-1  font-weight-bolder">
-        <p style="font-size:16px;" >ALUMNI ASSOCIATION OF GECNIT RAIPUR</p>
-        <p  style="font-size:14px;">NATIONAL INSTITUTE OF TECHNOLOGY RAIPUR<br>
+        <p style="font-size:18px; " >ALUMNI ASSOCIATION OF GECNIT RAIPUR</p>
+        <p  style="font-size:15px;">NATIONAL INSTITUTE OF TECHNOLOGY RAIPUR<br>
         </p>
-        <p  style="font-size:12px;">        
+        <p  style="font-size:14px;">        
                +91 0771 2990317, secretary@gecnitrralumni.org
                 <br>
                 www.gecnitrralumni.org
@@ -44,29 +64,43 @@
        
       </div>
       <div class="right text-right "  >
-        <img src="../assets/image/nitrr_logo.png" height="80px" >
+
+      <?php
+            if($data['passoutyear']==1996)
+                echo ' <img src="../assets/image/nitrr_logo.png" height="75px" >';
+            else
+                echo ' <img src="../assets/image/nitrr_logo1.png" height="75px" >';
+            
+        ?>
       </div>
     </div>
     <div class="card-body row">
       <!-- <img src="sketchnitrr.jpg"" class="img-responsive"> -->
    
       <div class="user-img" >
-      <img src="../assets/avatar/<?php echo $data['avatar']; ?> " class="img-responsive" height="100px" width="100px" alt=""> 
+      <img src="../assets/avatar/<?php echo $data['avatar']; ?> " class="img-responsive" height="130px" width="100px" alt=""> 
       
       </div>
       <div class="user-details ml-3">
-        <p class="font-weight-bold" >Name - <span ><?php echo $data['name']; ?></span></p>
-        <p class="font-weight-bold">Year - <span><?php echo $data['passoutyear']; ?></span></p>
-        <p class="font-weight-bold">Branch - <span><?php echo $data['branch']; ?></span></p>
-        <p class="font-weight-bold">UID - <span><?php echo $data['uid']; ?></span></p>
+      <table>
+            <tr>
+              <td><p >Name</td><td>  <span ><?php echo $data['name']; ?></span></p></td>
+           </tr>
+           <tr>
+              <td><p >Batch</td><td>  <span><?php echo $data['passoutyear']; ?></span></p></td>
+           </tr>
+           <tr>
+              <td><p >Branch</td><td>  <span><?php echo $data['branch']; ?></span></p></td>
+           </tr>
+           <tr>
+              <td><p >UID</td><td>  <span><?php echo $data['uid']; ?></span></p></td>
+           </tr>
+        </table>
       </div>
     </div> 
     <div class="card-footer row">
-      <div class="col-md-6">
-        <p class="font-weight-bold" style="font-size:22px">Silver Jubilee - <span class="passoutyear"><?php echo date("Y"); ?></span></p>
-      </div>
-      <div class="col-md-6">
-        <p class="font-weight-bold " style="text-align:center; font-size:22px;" >Secretary <span class="signature"> <img src="../assets/image/sign.png" height="50px"> </span></p>
+      <div class="col-md-12">
+        <p class="font-weight-bold" style="font-size:22px">SILVER JUBILEE REUNION - <span class="passoutyear"><?php echo date("Y"); ?></span></p>
       </div>
       
     </div>

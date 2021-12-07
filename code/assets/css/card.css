@@ -2,19 +2,25 @@
 	float: right;
 	padding: 0;
 	margin-left: 10px;
-	margin-right: 0px;
+	margin-right: 10px;
+	position:absolute;
+	right: 0;
 }
 .left {
 	float: left;
 	padding: 0;
 	
-	margin-right: 10px;
+	margin-right: 5px;
 	
 	margin-left: 10px;
+	position: absolute;
+	left: 0;
 }
 
 .middle{
 	padding: 0;
+	position: absolute;
+	left: 16%;
 }
 
 .user-img{
@@ -35,6 +41,7 @@
 .card-footer{
 	height: 70px;
 	font-size: 20px;
+	text-align: center;
 }
 .card-header{
 	padding-left: 5px;
@@ -102,7 +109,15 @@ background: linear-gradient(to left, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Fi
 }
 
 .gold .card-body .user-details,.silver .card-body .user-details{
-	font-size: 18px;
+	font-size: 20px;
+	
+	font-family: Verdana, sans-serif;
+	font-weight: bolder;
+}
+.gold .card-body .user-details span,.silver .card-body .user-details span{
+
+	margin-left: 5px;
+
 }
 
 .user-details{
@@ -112,5 +127,6 @@ background: linear-gradient(to left, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Fi
     background-repeat: no-repeat;    
 	/* background-position: center; */
     /* background-size: 100% 100%;  */
+	font-family: Verdana, sans-serif;
 
 }

@@ -1,5 +1,8 @@
+<?php
+include('contactform.php')
+?>
+
 <html>
-<head>
 <head>
   <title>Register</title>
   <meta charset="utf-8">
@@ -12,11 +15,12 @@
 <body>
 <h2>Register</h2>
   <div class="container">
-  <form class="form" action="contactform.php" method="POST" enctype="multipart/form-data">
-      
+  <form class="form" action="register.php" method="POST" enctype="multipart/form-data">
+      <?php include('errors.php'); ?>
       <div class="form-group">
       <label for="name">Name:</label>
       <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Full Name">
+      
     </div>
     
 
@@ -27,11 +31,11 @@
           <select id="branch" placeholder="Enter your branch" name="branch">
             
           <option>Select</option>
-            <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+            <option value="Computer Sc. & Engg.">Computer Sc. & Engg.</option>
             <option value="Information Technology">Information Technology</option>
-            <option value="Elex & Tele. Engg.">Electronics and Telecommunication</option>
+            <option value="Elex & Tele. Engg.">Elex & Tele. Engg.</option>
             <option value="Electrical Engineering">Electrical Engineering</option>
-            <option value="Metallurgical Engineering">Metallurgical and Materials Engineering</option>
+            <option value="Metallurgical Engineering">Metallurgical Engineering</option>
             <option value="Mechanical Engineering">Mechanical Engineering</option>
             <option value="Mining Engineering">Mining Engineering</option>
             <option value="Bio Medical Engineering">Bio Medical Engineering</option>
@@ -63,6 +67,9 @@
   </div>
 
 
+ 
+
 
 </body>
 </html>
+
