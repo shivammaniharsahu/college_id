@@ -2,7 +2,7 @@
   //creating connection to database
 
 
-$con=mysqli_connect("localhost","root","","college_id") or die(mysqli_error());
+$con=mysqli_connect("localhost","root","","college_idcard") or die(mysqli_error());
 
   //check whether submit button is pressed or not
 $errors = array(); 
@@ -10,20 +10,53 @@ if((isset($_POST['submit'])))
 {
   //fetching and storing the form data in variables
 
-              $Name = $con->real_escape_string($_POST['name']);
+              $Name1 = $con->real_escape_string($_POST['name']);
               $Branch = $con->real_escape_string($_POST['branch']);
+              
+              $Name="";
+              $Name=$Name.strtoupper($Name1[0]);
+                
+              for($i=1;$i<strlen($Name1);$i=$i+1)
+              {
+                if($Name1[$i]==" " && $i+1<strlen($Name1))
+                {
+                  
+                  $Name=$Name.$Name1[$i];
+                  $Name=$Name.strtoupper($Name1[$i+1]);
+                  $i=$i+1;
+                }
+                else
+                {
+                  $Name=$Name.strtolower($Name1[$i]); 
+                }
+              }
               $Profile = $_FILES['avatar'];
               $PassoutYear = $con->real_escape_string($_POST['passoutyear']);
+              
+              $Email = $con->real_escape_string($_POST['email']);
 
               if (empty($Name)) { array_push($errors, "Name is required"); }
               if ($Branch=='Select') { array_push($errors, "Branch is required"); }
               if (empty($PassoutYear)) { array_push($errors, "Batch is required"); }
-             
+              
+              if (empty($Email)) { array_push($errors, "Email is required"); }
+
+              
+              $isPresent = "SELECT * FROM alumni_information__responses_ where email='$Email'";
+              
+              $result = mysqli_query($con, $isPresent);
+                      
+                        while ($row = $result->fetch_assoc()) {
+                            if($Email==$row['email'])
+                            {
+                              { array_push($errors, "Email already exist"); }
+                            }
+                      }
+                      
               if (count($errors) == 0) 
               {  
-
+                    
                       $bid="";
-
                       if($Branch=='Computer Sc. & Engg.')
                       {  
                         $bid="101"; 
@@ -74,27 +107,10 @@ if((isset($_POST['submit'])))
                         $bid="112"; 
                       }
 
-                      $user_check_query = "SELECT * FROM users where branch='$Branch' and passoutyear='$PassoutYear' ";
+                      $user_check_query = "SELECT * FROM alumni_information__responses_ where branch='$Branch' and passoutyear='$PassoutYear' ";
                       $mx=0;
-                      $result = mysqli_query($con, $user_check_query);
-                      
-                        while ($row = $result->fetch_assoc()) {
-                            if($mx<$row['uid'])
-                            $mx=$row['uid'];
-                      }
-
-                    if($mx==0)
-                    {
-                      $uuid="101";
-                      $UID =$PassoutYear. $bid . $uuid;
-                    }
-                    else
-                    {
-                      $uuid = substr($mx, -3);
-                      $uuid=$uuid+1;
-                      
-                      $UID =$PassoutYear. $bid . $uuid;
-                    }
+                     
+                    $Profile = $_FILES['avatar'];
 
                         $p_file_name = $Profile['name'];
                         $p_file_type = $Profile['type'];
@@ -108,7 +124,7 @@ if((isset($_POST['submit'])))
                         if (empty($p_file_name)) { $profile_pic_name= 'prof1.jpg';}
 
                         //query to insert the variable data into the database
-                      $sql="INSERT INTO users (uid,name,branch,passoutyear,avatar) VALUES ('".$UID."','".$Name."','".$Branch."','".$PassoutYear."','".$profile_pic_name."')";
+                      $sql="INSERT INTO alumni_information__responses_ (name,branch,passoutyear,avatar,email) VALUES ('".$Name."','".$Branch."','".$PassoutYear."','".$profile_pic_name."','".$Email."')";
                           
                       if(!$result = $con->query($sql)){
                           die('Error occured [' . $con->error . ']');

@@ -11,6 +11,7 @@ include('contactform.php')
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 <h2>Register</h2>
@@ -18,12 +19,17 @@ include('contactform.php')
   <form class="form" action="register.php" method="POST" enctype="multipart/form-data">
       <?php include('errors.php'); ?>
       <div class="form-group">
+      
       <label for="name">Name:</label>
       <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Full Name">
       
     </div>
     
-
+    <div class="form-group">
+      
+    <label for="name">Email:</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email">    
+      </div>
     
     <div class="form-group">
       <label for="branch">Branch:</label>
@@ -43,15 +49,10 @@ include('contactform.php')
             <option value="Chemical Engineering">Chemical Engineering</option>
             <option value="Architecture Engineering">Architecture Engineering</option>
             <option value="Civil Engineering">Civil Engineering</option>
-
-         
-
           </select>
 
-    </div>
-    
-    
-     <div class="form-group">
+    </div>    
+     <div class="form-group" >
       <label for="passoutyear">Batch:</label>
       <input type="number" class="form-control" id="passoutyear" name="passoutyear" placeholder="Enter Year YYYY">
     </div>
@@ -65,9 +66,6 @@ include('contactform.php')
     </p>
   </form>
   </div>
-
-
- 
 
 
 </body>

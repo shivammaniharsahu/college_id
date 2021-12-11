@@ -19,33 +19,23 @@
 
             include "../server/dbconn.php"; // Using database connection file here
 
-       $records = mysqli_query($db,"select * from users"); // fetch data from database
+       $records = mysqli_query($db,"select * from alumni_information__responses_"); // fetch data from database
          $id=1;
         while($data = mysqli_fetch_array($records))
         {
-        ?>  
-          <?php 
-             if($id%2==0)
-              {
-
-                echo '<div class="col-md-6" style="margin-left:-15px">';
-
-
-                $id=$id+1;
-
-              }
-
-          
-
-          
-              else
-              {
-                echo '<div class="col-md-6" >';
-                
-          $id=$id+1;
-              }
-              
-          ?>
+            ?>  
+              <?php 
+                if($id%2==0)
+                  {
+                    echo '<div class="col-md-6" style="margin-left:-15px">';
+                  }
+                  else
+                  {
+                    echo '<div class="col-md-6" >'; 
+                        
+                  }
+                  $id=$id+1;
+              ?>
 
   <div class="card mb-4 silver ml-1">
     <div class="card-header row ">
@@ -78,7 +68,7 @@
       <!-- <img src="sketchnitrr.jpg"" class="img-responsive"> -->
    
       <div class="user-img" >
-      <img src="../assets/avatar/<?php echo $data['avatar']; ?> " class="img-responsive" height="130px" width="100px" alt=""> 
+      <img src="<?php echo $data['avatar']; ?>" class="img-responsive" height="110px" width="100px" alt=""> 
       
       </div>
       <div class="user-details ml-3">
@@ -92,9 +82,7 @@
            <tr>
               <td><p >Branch</td><td>  <span><?php echo $data['branch']; ?></span></p></td>
            </tr>
-           <tr>
-              <td><p >UID</td><td>  <span><?php echo $data['uid']; ?></span></p></td>
-           </tr>
+           
         </table>
       </div>
     </div> 

@@ -52,7 +52,7 @@
         <!-- <div class="header-border"></div> -->
       </div>
       <div class="right text-right "  >
-        <img src="../assets/image/nitrr_logo.png" height="80px" >
+        <img src="../assets/image/nitrr_logo1.png" height="80px" >
       </div>
     </div>
     <div class="card-body row" style="" >
